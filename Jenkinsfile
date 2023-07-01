@@ -17,7 +17,7 @@ pipeline {
         stage('Checkout') {
             steps{
                 git branch: 'master',
-                    url: 'https://github.com/DanilaZaytsev/k8sstart.git'
+                    url: 'https://github.com/DanilaZaytsev/springhello.git'
                 }
         }
         stage('Test') {
@@ -28,6 +28,7 @@ pipeline {
                 }
             }
         }
+
         stage('Build docker image') {
             steps{
                 dir('.') {
