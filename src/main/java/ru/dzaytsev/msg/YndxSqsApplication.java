@@ -1,13 +1,13 @@
-package ru.dzaytsev.hello;
+package ru.dzaytsev.msg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HelloApplication {
+public class YndxSqsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HelloApplication.class, args);
+		SpringApplication.run(YndxSqsApplication.class, args);
 	}
 
 }

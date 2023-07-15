@@ -1,11 +1,11 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.1.1'
-	id 'io.spring.dependency-management' version '1.1.0'
+	id 'org.springframework.boot' version "$springBootVersion"
+	id 'io.spring.dependency-management' version "$springDependencyManagementVerion"
 }
 
-group = 'ru.dzaytsev.hello'
-version = '0.0.1-SNAPSHOT'
+group = 'ru.dzaytsev.msg'
+version = '1.0.0-SNAPSHOT'
 
 java {
 	sourceCompatibility = '17'
@@ -22,10 +22,28 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+
+	implementation "org.flywaydb:flyway-core:$flywayDbVersion"
+	implementation "io.r2dbc:r2dbc-postgresql:$r2dbcVersion"
+	implementation "org.postgresql:postgresql:$postgresVersion"
+
+    implementation "org.mapstruct:mapstruct:$mapStructVersion"
+	annotationProcessor "org.mapstruct:mapstruct-processor:$mapStructVersion"
+
+	implementation "io.awspring.cloud:spring-cloud-aws-starter:$springCloudAws"
+	implementation "io.awspring.cloud:spring-cloud-aws-sqs:$springCloudAws"
+	implementation "io.awspring.cloud:spring-cloud-aws-messaging:$springCloudAwsMessaging"
+	implementation "software.amazon.awssdk:aws-sdk-java:$awsSdkVersion"
+	implementation "software.amazon.awssdk:sqs:$awsSdkVersion"
+
+	compileOnly "org.projectlombok:lombok"
+	annotationProcessor "org.projectlombok:lombok"
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
 }
 
 tasks.named('test') {

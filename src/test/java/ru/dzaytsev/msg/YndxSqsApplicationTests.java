@@ -1,10 +1,10 @@
-package ru.dzaytsev.hello;
+package ru.dzaytsev.msg;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HelloApplicationTests {
+class YndxSqsApplicationTests {
 
 	@Test
 	void contextLoads() {

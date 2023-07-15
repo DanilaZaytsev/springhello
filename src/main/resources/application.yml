@@ -1,0 +1,25 @@
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgresql://80.87.201.44:5432/spring
+    username: spring
+    password: P17MRXug$r$VSLhwWZY79n4zL
+  flyway:
+    url: jdbc:postgresql://80.87.201.44:5432/spring
+    user: spring
+    password: P17MRXug$r$VSLhwWZY79n4zL
+    locations: classpath:db/migration
+  cloud:
+    aws:
+      credentials:
+        access-key: YCAJELIwqZ70WpllEdm2Ji34B
+        secret-key: YCOzdw9QfYJsjKjDMdyZwu4pu78HW2hb6NrUCeJc
+      region:
+        static: ru-central1
+      sqs:
+        endpoint: https://message-queue.api.cloud.yandex.net
+
+sqs:
+  notifications:
+    queue:
+      name: sqs-demo.fifo
+      region:  ru-central1
